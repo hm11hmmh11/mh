@@ -1,0 +1,45 @@
+index1
+<form action="{% url 'index' %}" method="GET">
+<p>start node : <select name="FC">
+                    {% for z in y %}
+                        <option value="{{z}}">{{z}}</option>
+                    {% endfor  %}
+                </select>
+</p>
+
+<p>Dist: : <select name="SC">
+            {% for z in y %}
+                <option value="{{z}}">{{z}}</option>
+            {% endfor  %}
+            </select>
+</p>
+
+<input type="submit" name="on">
+</form>
+<p>{{f}}   --->   {{s}}</p>
+
+<p>min of total heuristic_value = {{H}} </p>
+
+<p>total min cost = {{C}} </p>
+
+
+{% for x in Q %}
+    {% if x != 0 %}
+    <p>{{x}}</p>
+    {% endif  %}
+{% endfor  %}
+
+<hr>
+<form action="{% url 'index' %}" method="GET">
+
+<p>Add new map      <input type="text" required name="New"></p>
+<p>new map weight   <input type="text" required name="Heu"></p>
+<p>Add connction    <input type="text" required name="Connctio"></p>
+<p>heuristic        <input type="text" required name="Wet"></p> 
+
+<input type="submit" name="tos" >
+</form>
+<p>new map added = {{NEW}} </p>
+<p> heuristic :{{He}} </p>
+<p> G : {{G}} </p>
+<p> S_L : {{a}}</p>
